@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ratnesh_blog@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>9.6.9</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="odoo_ratnesh">
+      <ObjectId>25596</ObjectId>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12441</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <database id="4" parent="1" name="ratnesh_blog">
+      <ObjectId>58374</ObjectId>
+      <IntrospectionStateNumber>105</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="5" parent="1" name="ratnesh_resume">
+      <ObjectId>25397</ObjectId>
+    </database>
+    <role id="6" parent="1" name="odoo">
+      <ObjectId>25595</ObjectId>
+      <Inherit>1</Inherit>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <role id="9" parent="1" name="ratnesh">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="10" parent="4" name="information_schema">
+      <ObjectId>12153</ObjectId>
+    </schema>
+    <schema id="11" parent="4" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="12" parent="4" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="13" parent="4" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="14" parent="4" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="15" parent="4" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-08-03.18:20:00.362</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2886</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="16" parent="4" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="17" parent="4" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="4" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="4" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="4" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="4" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="22" parent="15" name="contacts_sno_seq">
+      <ObjectId>66603</ObjectId>
+      <StateNumber>2880</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="23" parent="15" name="posts_sno_seq">
+      <ObjectId>66566</ObjectId>
+      <StateNumber>2866</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="24" parent="15" name="contacts">
+      <ObjectId>66575</ObjectId>
+      <StateNumber>2873</StateNumber>
+    </table>
+    <table id="25" parent="15" name="posts">
+      <ObjectId>66568</ObjectId>
+      <StateNumber>2866</StateNumber>
+    </table>
+    <column id="26" parent="24" name="name">
+      <Position>1</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <StateNumber>2867</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="27" parent="24" name="email">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <StateNumber>2878</StateNumber>
+      <DefaultExpression>&apos;noreply@post.com&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="28" parent="24" name="mobile">
+      <Position>3</Position>
+      <DataType>numeric(10)|0s</DataType>
+      <StateNumber>2867</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="29" parent="24" name="msg">
+      <Position>4</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <StateNumber>2868</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="24" name="date">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2886</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="31" parent="24" name="sno">
+      <Position>6</Position>
+      <Comment>Pk with increament</Comment>
+      <DataType>numeric|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2881</StateNumber>
+      <DefaultExpression>nextval(&apos;contacts_sno_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>1700</TypeId>
+      <SequenceName>contacts_sno_seq</SequenceName>
+    </column>
+    <index id="32" parent="24" name="contacts_sno_pk">
+      <ObjectId>66592</ObjectId>
+      <ColNames>sno</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="24" name="contacts_sno_pk">
+      <ObjectId>66593</ObjectId>
+      <ColNames>sno</ColNames>
+      <UnderlyingIndexName>contacts_sno_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="25" name="sno">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2866</StateNumber>
+      <DefaultExpression>nextval(&apos;posts_sno_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>posts_sno_seq</SequenceName>
+    </column>
+    <column id="35" parent="25" name="title">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>2866</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="36" parent="25" name="content">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>2866</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="37" parent="25" name="date">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>2866</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="38" parent="25" name="posts_pkey">
+      <ObjectId>66573</ObjectId>
+      <ColNames>sno</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="25" name="posts_pkey">
+      <ObjectId>66574</ObjectId>
+      <ColNames>sno</ColNames>
+      <UnderlyingIndexName>posts_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
