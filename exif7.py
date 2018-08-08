@@ -528,85 +528,140 @@
 #     app = App()
 #     app.run()
 #
-class Army:
-    def train_swordsman(self, name):
-        raise NotImplementedError()
+# class Army:
+#     def train_swordsman(self, name):
+#         raise NotImplementedError()
+#
+#     def train_lancer(self, name):
+#         raise NotImplementedError()
+#
+#     def train_archer(self, name):
+#         raise NotImplementedError()
+#
+#
+# class Sword:
+#     def __init__(self, name):
+#         self._name = name
+#
+#     def introduce(self):
+#         return self._name
+#
+#
+# class Lancer:
+#     def __init__(self, name):
+#         self._name = name
+#
+#     def introduce(self):
+#         return self._name
+#
+#
+# class Archer:
+#     def __init__(self, name):
+#         self._name = name
+#
+#     def introduce(self):
+#         return self._name
+#
+#
+# class AsianArmy(Army):
+#     def train_swordsman(self, name):
+#         return Sword(f'''Samurai {name}, Asian swordsman''')
+#
+#     def train_lancer(self, name):
+#         s = Lancer('lancer')
+#         return Lancer(f'''Ronin {name}, Asian lancer''')
+#
+#     def train_archer(self, name):
+#         return Archer(f'''Shinobi {name}, Asian archer''')
+#
+#
+# class EuropeanArmy(Army):
+#     def train_swordsman(self, name):
+#         return Sword(f'''Knight {name}, European swordsman''')
+#
+#     def train_lancer(self, name):
+#         return Lancer(f'''Raubritter {name}, European lancer''')
+#
+#     def train_archer(self, name):
+#         return Archer(f'''Ranger {name}, European archer''')
+#
+#
+# if __name__ == '__main__':
+#     # These "asserts" using only for self-checking and not necessary for auto-testing
+#
+#     my_army = EuropeanArmy()
+#     enemy_army = AsianArmy()
+#
+#     soldier_1 = my_army.train_swordsman("Jaks")
+#     soldier_2 = my_army.train_lancer("Harold")
+#     soldier_3 = my_army.train_archer("Robin")
+#
+#     soldier_4 = enemy_army.train_swordsman("Kishimoto")
+#     soldier_5 = enemy_army.train_lancer("Ayabusa")
+#     soldier_6 = enemy_army.train_archer("Kirigae")
+#
+#     print(soldier_1.introduce())
+#     assert soldier_1.introduce() == "Knight Jaks, European swordsman"
+#     assert soldier_2.introduce() == "Raubritter Harold, European lancer"
+#     assert soldier_3.introduce() == "Ranger Robin, European archer"
+#
+#     assert soldier_4.introduce() == "Samurai Kishimoto, Asian swordsman"
+#     assert soldier_5.introduce() == "Ronin Ayabusa, Asian lancer"
+#     assert soldier_6.introduce() == "Shinobi Kirigae, Asian archer"
+#
+#     print("Coding complete? Let's try tests!")
 
-    def train_lancer(self, name):
-        raise NotImplementedError()
-
-    def train_archer(self, name):
-        raise NotImplementedError()
-
-
-class Sword:
+class Friend:
     def __init__(self, name):
-        self._name = name
+        self.name = name
+        self.invites = ''
+        self.pname = ''
 
-    def introduce(self):
-        return self._name
-
-
-class Lancer:
-    def __init__(self, name):
-        self._name = name
-
-    def introduce(self):
-        return self._name
+    def show_invite(self):
+        if len(self.invites) != 0:
+            return f"{self.pname}: {self.invites}"
+        else:
+            return 'No party...'
 
 
-class Archer:
-    def __init__(self, name):
-        self._name = name
+class Party:
+    def __init__(self, party):
+        self.list = set()
+        self.party = party
 
-    def introduce(self):
-        return self._name
+    def add_friend(self, name):
+        if not isinstance(name, Friend):
+            raise TypeError
+        self.list.add(name)
 
+    def del_friend(self, name):
+        self.list.remove(name)
 
-class AsianArmy(Army):
-    def train_swordsman(self, name):
-        return Sword(f'''Samurai {name}, Asian swordsman''')
-
-    def train_lancer(self, name):
-        s = Lancer('lancer')
-        return Lancer(f'''Ronin {name}, Asian lancer''')
-
-    def train_archer(self, name):
-        return Archer(f'''Shinobi {name}, Asian archer''')
-
-
-class EuropeanArmy(Army):
-    def train_swordsman(self, name):
-        return Sword(f'''Knight {name}, European swordsman''')
-
-    def train_lancer(self, name):
-        return Lancer(f'''Raubritter {name}, European lancer''')
-
-    def train_archer(self, name):
-        return Archer(f'''Ranger {name}, European archer''')
+    def send_invites(self, time):
+        for f in self.list:
+            f.invites = time
+            f.pname = self.party
 
 
 if __name__ == '__main__':
     # These "asserts" using only for self-checking and not necessary for auto-testing
 
-    my_army = EuropeanArmy()
-    enemy_army = AsianArmy()
+    party = Party("Midnight Pub")
+    nick = Friend("Nick")
+    john = Friend("John")
+    lucy = Friend("Lucy")
+    chuck = Friend("Chuck")
 
-    soldier_1 = my_army.train_swordsman("Jaks")
-    soldier_2 = my_army.train_lancer("Harold")
-    soldier_3 = my_army.train_archer("Robin")
-
-    soldier_4 = enemy_army.train_swordsman("Kishimoto")
-    soldier_5 = enemy_army.train_lancer("Ayabusa")
-    soldier_6 = enemy_army.train_archer("Kirigae")
-
-    print(soldier_1.introduce())
-    assert soldier_1.introduce() == "Knight Jaks, European swordsman"
-    assert soldier_2.introduce() == "Raubritter Harold, European lancer"
-    assert soldier_3.introduce() == "Ranger Robin, European archer"
-
-    assert soldier_4.introduce() == "Samurai Kishimoto, Asian swordsman"
-    assert soldier_5.introduce() == "Ronin Ayabusa, Asian lancer"
-    assert soldier_6.introduce() == "Shinobi Kirigae, Asian archer"
-
+    party.add_friend(nick)
+    party.add_friend(john)
+    party.add_friend(lucy)
+    party.send_invites("Friday, 9:00 PM")
+    party.del_friend(nick)
+    party.send_invites("Saturday, 10:00 AM")
+    party.add_friend(chuck)
+    print(chuck.show_invite())
+    assert john.show_invite() == "Midnight Pub: Saturday, 10:00 AM"
+    assert lucy.show_invite() == "Midnight Pub: Saturday, 10:00 AM"
+    assert nick.show_invite() == "Midnight Pub: Friday, 9:00 PM"
+    assert chuck.show_invite() == "No party..."
     print("Coding complete? Let's try tests!")

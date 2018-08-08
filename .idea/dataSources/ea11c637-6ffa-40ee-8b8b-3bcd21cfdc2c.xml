@@ -70,8 +70,8 @@
     <schema id="15" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-08-03.18:20:00.362</IntrospectionTimestamp>
-      <IntrospectionStateNumber>2886</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-08-08.18:34:49.662</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2961</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -117,16 +117,16 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="22" parent="15" name="contacts_sno_seq">
-      <ObjectId>66603</ObjectId>
-      <StateNumber>2880</StateNumber>
+    <sequence id="22" parent="15" name="posts_sno_seq">
+      <ObjectId>82997</ObjectId>
+      <StateNumber>2961</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
     </sequence>
-    <sequence id="23" parent="15" name="posts_sno_seq">
-      <ObjectId>66566</ObjectId>
-      <StateNumber>2866</StateNumber>
+    <sequence id="23" parent="15" name="contacts_sno_seq">
+      <ObjectId>66603</ObjectId>
+      <StateNumber>2880</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
@@ -136,8 +136,8 @@
       <StateNumber>2873</StateNumber>
     </table>
     <table id="25" parent="15" name="posts">
-      <ObjectId>66568</ObjectId>
-      <StateNumber>2866</StateNumber>
+      <ObjectId>82999</ObjectId>
+      <StateNumber>2961</StateNumber>
     </table>
     <column id="26" parent="24" name="name">
       <Position>1</Position>
@@ -196,37 +196,54 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2866</StateNumber>
+      <StateNumber>2961</StateNumber>
       <DefaultExpression>nextval(&apos;posts_sno_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
       <SequenceName>posts_sno_seq</SequenceName>
     </column>
     <column id="35" parent="25" name="title">
       <Position>2</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <StateNumber>2866</StateNumber>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>2961</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="36" parent="25" name="content">
+    <column id="36" parent="25" name="tagline">
       <Position>3</Position>
-      <DataType>varchar(50)|0s</DataType>
-      <StateNumber>2866</StateNumber>
+      <DataType>text|0s</DataType>
+      <StateNumber>2961</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="37" parent="25" name="slug">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>2961</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="38" parent="25" name="content">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>2961</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="39" parent="25" name="date">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>2961</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="37" parent="25" name="date">
-      <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-      <StateNumber>2866</StateNumber>
-      <DefaultExpression>now()</DefaultExpression>
-      <TypeId>1114</TypeId>
+    <column id="40" parent="25" name="img_url">
+      <Position>7</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>2961</StateNumber>
+      <TypeId>25</TypeId>
     </column>
-    <index id="38" parent="25" name="posts_pkey">
-      <ObjectId>66573</ObjectId>
+    <index id="41" parent="25" name="posts_pkey">
+      <ObjectId>83006</ObjectId>
       <ColNames>sno</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="39" parent="25" name="posts_pkey">
-      <ObjectId>66574</ObjectId>
+    <key id="42" parent="25" name="posts_pkey">
+      <ObjectId>83007</ObjectId>
       <ColNames>sno</ColNames>
       <UnderlyingIndexName>posts_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
