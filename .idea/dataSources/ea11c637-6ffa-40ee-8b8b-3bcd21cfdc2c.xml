@@ -70,8 +70,8 @@
     <schema id="15" parent="4" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-08-08.18:34:49.662</IntrospectionTimestamp>
-      <IntrospectionStateNumber>2961</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-08-10.18:15:37.600</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3008</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -196,7 +196,7 @@
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2961</StateNumber>
+      <StateNumber>3008</StateNumber>
       <DefaultExpression>nextval(&apos;posts_sno_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
       <SequenceName>posts_sno_seq</SequenceName>
@@ -237,15 +237,15 @@
       <StateNumber>2961</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="41" parent="25" name="posts_pkey">
-      <ObjectId>83006</ObjectId>
+    <index id="41" parent="25" name="posts_sno_pk">
+      <ObjectId>91174</ObjectId>
       <ColNames>sno</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="25" name="posts_pkey">
-      <ObjectId>83007</ObjectId>
+    <key id="42" parent="25" name="posts_sno_pk">
+      <ObjectId>91175</ObjectId>
       <ColNames>sno</ColNames>
-      <UnderlyingIndexName>posts_pkey</UnderlyingIndexName>
+      <UnderlyingIndexName>posts_sno_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
   </database-model>
