@@ -48,10 +48,32 @@ class Posts(db.Model):
     date = db.Column(db.String(20), nullable=True)
 
 
+import math
+
+
 @app.route('/')
 def index():
-    posts = Posts.query.filter_by().all()[0:params['no_of_posts']]
-    return render_template("index.html", params=params, posts=posts)
+    posts = Posts.query.filter_by().all()
+    nop = int(params['no_of_posts'])
+    last = math.ceil(len(posts) / nop)
+
+    page = request.args.get('page')
+
+    if not str(page).isnumeric():
+        page = 1
+    page = int(page)
+    posts = posts[(page - 1) * nop: (page - 1) * nop + nop]
+    if page == 1:
+        prev = '#'
+        next = '/?page=' + str(page + 1)
+    elif page == last:
+        prev = '/?page=' + str(page - 1)
+        next = '#'
+    else:
+        prev = '/?page=' + str(page - 1)
+        next = '/?page=' + str(page + 1)
+
+    return render_template("index.html", params=params, posts=posts, prev=prev, next=next)
 
 
 @app.route('/post/<string:slug_post>', methods=['GET'])
